@@ -14,6 +14,7 @@ macro_rules! formats {
     } => {
         /// A file format.
         #[derive(Clone, Debug, Eq, PartialEq)]
+        #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
         pub enum FileFormat {
             $(
                 #[doc=concat!($name, $(" (", $short_name, ")",)? ".")]

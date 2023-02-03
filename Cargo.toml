@@ -17,6 +17,12 @@ exclude = ["/.github/*", "/examples/*", "/fixtures/*", "/tests/*"]
 cfb = { version = "0.7", optional = true }
 zip = { version = "0.6", optional = true, features = ["deflate-miniz"], default-features = false }
 
+[dependencies.serde]
+optional = true
+default-features = false
+features = [ "derive" ]
+version = "1.0"
+
 [features]
 ## ACCURACY FEATURES
 
@@ -39,3 +45,4 @@ reader-pdf = []
 reader-txt = []
 reader-xml = []
 reader-zip = ["dep:zip"]
+
